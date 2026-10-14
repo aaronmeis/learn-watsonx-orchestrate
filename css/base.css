@@ -84,3 +84,6 @@ pre.err{border-color:var(--bad)}
 .yt-play:hover .yt-btn,.yt-play:focus-visible .yt-btn{transform:translate(-50%,-50%) scale(1.08)}
 .yt-play:focus-visible{outline:3px solid #F3EE6E;outline-offset:-3px}
 .yt-note{position:absolute;left:0;right:0;bottom:0;padding:.4rem .6rem;font-size:.75rem;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.75))}
+
+/* Architecture */
+.arch-toc{margin:1rem 0}.arch-view{margin:1.2rem 0}.arch-fig{margin:.8rem 0}.arch-fig img{width:100%;height:auto;display:block;border:1px solid var(--bd);border-radius:8px;background:#fff}.arch-fig figcaption{font-size:.9rem;margin-top:.4rem}
