@@ -87,3 +87,14 @@ pre.err{border-color:var(--bad)}
 
 /* Architecture */
 .arch-toc{margin:1rem 0}.arch-view{margin:1.2rem 0}.arch-fig{margin:.8rem 0}.arch-fig img{width:100%;height:auto;display:block;border:1px solid var(--bd);border-radius:8px;background:#fff}.arch-fig figcaption{font-size:.9rem;margin-top:.4rem}
+.arch-fig a[data-lb]{cursor:zoom-in;display:block}
+.lb{position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,.78);display:flex;align-items:center;justify-content:center}.lb[hidden]{display:none}
+.lb-inner{position:relative;max-width:80vw;max-height:80vh;display:flex;align-items:center}
+.lb-fig{margin:0;background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:.6rem}
+.lb-fig img{display:block;max-width:calc(80vw - 1.2rem);max-height:calc(80vh - 3.5rem);width:auto;height:auto;background:#fff;border-radius:6px}
+.lb-fig figcaption{color:var(--tx);font-size:.9rem;margin-top:.45rem}.lb-full{color:var(--tx);text-decoration:underline}
+.lb button{background:#000;color:#fff;border:2px solid #F3EE6E;border-radius:50%;width:2.6rem;height:2.6rem;font-size:1.5rem;line-height:1;cursor:pointer}
+.lb button:hover,.lb button:focus-visible{background:#F3EE6E;color:#000;outline:none}
+.lb-prev{position:absolute;left:-3.2rem}.lb-next{position:absolute;right:-3.2rem}.lb-x{position:absolute;top:-1.3rem;right:-1.3rem;z-index:1}
+body.lb-open{overflow:hidden}
+@media (max-width:700px){.lb-inner{max-width:94vw}.lb-fig img{max-width:calc(94vw - 1.2rem)}.lb-prev{left:.3rem;bottom:-3.4rem}.lb-next{right:.3rem;bottom:-3.4rem}.lb-x{top:-3.2rem;right:0}}
