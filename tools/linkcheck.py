@@ -11,7 +11,7 @@ for f in files:
         if h.startswith(("http","#","data:","mailto:")): continue
         n+=1
         if not os.path.exists(os.path.join(root,h.split("#")[0])): bad.append((f,h))
-    ext|=set(u.rstrip('.,);') for u in re.findall(r'https://[^\s"\'<>`\\]+',s) if not re.search(r'localhost|example\.com|<|\$|\{|login\.salesforce\.com/services|login\.microsoftonline|service-now\.com|workday\.com|iam\.cloud\.ibm\.com/identity|iam\.platform|watson-orchestrate\.cloud\.ibm\.com',u))
+    ext|=set(u.rstrip('.,);') for u in re.findall(r'https://[^\s"\'<>`\\]+',s) if not re.search(r'^https://(i\.ytimg\.com|www\.youtube-nocookie\.com)[;/]?$|localhost|example\.com|<|\$|\{|login\.salesforce\.com/services|login\.microsoftonline|service-now\.com|workday\.com|iam\.cloud\.ibm\.com/identity|iam\.platform|watson-orchestrate\.cloud\.ibm\.com',u))
 ext.discard("https://graph.microsoft.com"); ext.discard("https://management.azure.com/")
 print(f"internal refs {n}, broken {len(bad)}")
 for b in bad: print("BROKEN",*b)

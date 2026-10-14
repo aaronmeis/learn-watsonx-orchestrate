@@ -23,7 +23,7 @@ V.today=()=>`<span class="badge">Study console</span>
 <div class="card" style="margin:1rem 0"><h2 style="margin-top:0">About this site</h2><p>An independent learning resource for IBM watsonx Orchestrate: a Start here intro, three tracks (Cloud, SDK, Partner integrations), a control-plane deep dive, ${LABS.length} Fix-it labs, ${PROMPTS.length} AI prompts, a quiz, a glossary and a source ledger. New here? Start with Block 0, pick a track, then try the labs.</p><a class="b" href="#/about">About this site →</a> <a class="b" href="#/curriculum/0">Start here →</a></div>
 <div class="grid">${Object.entries(TRACKS).map(([k,T])=>`<div class="card" style="border-color:var(--acc)"><span class="badge">Featured track</span><h2 style="margin-top:.5rem">${esc(T.name)}</h2><p>${esc(T.intro)}</p><a class="b sel" href="#/${k}">Open →</a> <a class="b" href="#/${k}/lab">Lab</a> <a class="b" href="#/${k}/trouble">Troubleshoot</a></div>`).join("")}</div>
 <h2>What's here</h2><div class="grid">
-${[["curriculum/0","Start here: Block 0","What it is, where it came from (Watson Orchestrate 2021 → watsonx 2023 → agents 2025), and why it exists."],["curriculum/6","Deep dive: control plane","Agentic control plane, orchestrator agent, AI Gateway, eCommerce pilot, and what's only announced."],["methods","Ways to interact","UI, ADK CLI, Python, REST API, embedded chat, Terraform side by side."],["picker","Which method should I use?","Answer three questions, get a recommendation."],["limits","Limits and gotchas","Tenant limits, timeouts, token lifetimes, file sizes."],["prompts","AI prompts",PROMPTS.length+" fill-in prompts in "+PROMPT_CATS.length+" groups, including partner scenarios. Redact first."],["labs","Fix-it labs",LABS.length+" broken setups across Cloud, SDK and Partners."],["guides","Step-by-step guides",GUIDES.length+" hands-on walkthroughs."],["map","Map","What Orchestrate connects to."],["path","Learning path","IBM's own docs in order."]].map(([h,t,d])=>`<div class="card"><h3>${t}</h3><p>${esc(d)}</p><a class="b" href="#/${h}">Open →</a></div>`).join("")}
+${[["curriculum/0","Start here: Block 0","What it is, where it came from (Watson Orchestrate 2021 → watsonx 2023 → agents 2025), and why it exists."],["curriculum/6","Deep dive: control plane","Agentic control plane, orchestrator agent, AI Gateway, eCommerce pilot, and what's only announced."],["methods","Ways to interact","UI, ADK CLI, Python, REST API, embedded chat, Terraform side by side."],["picker","Which method should I use?","Answer three questions, get a recommendation."],["limits","Limits and gotchas","Tenant limits, timeouts, token lifetimes, file sizes."],["prompts","AI prompts",PROMPTS.length+" fill-in prompts in "+PROMPT_CATS.length+" groups, including partner scenarios. Redact first."],["labs","Fix-it labs",LABS.length+" broken setups across Cloud, SDK and Partners."],["videos","Videos",VIDEOS.length+" public videos: IBM explainers, ADK walkthroughs, hands-on labs and a partner demo."],["guides","Step-by-step guides",GUIDES.length+" hands-on walkthroughs."],["map","Map","What Orchestrate connects to."],["path","Learning path","IBM's own docs in order."]].map(([h,t,d])=>`<div class="card"><h3>${t}</h3><p>${esc(d)}</p><a class="b" href="#/${h}">Open →</a></div>`).join("")}
 </div>`;
 
 V.about=()=>`<h1>About this site</h1>
@@ -33,11 +33,17 @@ V.about=()=>`<h1>About this site</h1>
 <li>Three tracks: <a href="#/cloud">Cloud</a> (IBM Cloud and AWS), <a href="#/sdk">SDK</a> (the Agent Development Kit and APIs) and <a href="#/partners">Partner integrations</a> (Agent Connect, Salesforce, ServiceNow, SAP, Workday).</li>
 <li><a href="#/curriculum/6">Control-plane deep dive</a>: the agentic control plane, orchestrator agent and AI Gateway, and what's only announced.</li>
 <li><a href="#/labs">${LABS.length} Fix-it labs</a>: broken setups with an error, clues one at a time, and a fix to pick.</li>
+<li><a href="#/videos">${VIDEOS.length} videos</a>, played only when you click, each paired with a site section.</li>
 <li><a href="#/prompts">${PROMPTS.length} AI prompts</a> with fill-in blanks, grouped and searchable.</li>
 <li>A <a href="#/quiz">quiz</a>, a <a href="#/glossary">glossary</a> for every code and acronym, and a <a href="#/refs">source ledger</a> of ${SOURCES.length} sources.</li></ul>
 <h2>Who it's for</h2><p>People who want to understand how Orchestrate actually works: developers picking up the ADK, platform and cloud admins setting up instances, and anyone wiring it into Salesforce, ServiceNow, SAP or Workday. You don't need prior IBM experience.</p>
-<h2>How to use it</h2><ol class="steps"><li>Read <a href="#/curriculum/0">Start here</a>.</li><li>Pick the track that matches your job: <a href="#/cloud">Cloud</a>, <a href="#/sdk">SDK</a> or <a href="#/partners">Partners</a>.</li><li>Break things on purpose in the <a href="#/labs">Fix-it labs</a>.</li><li>Check yourself with the <a href="#/quiz">quiz</a>.</li><li>Use the <a href="#/prompts">AI prompts</a> on your own scenarios. Redact first.</li></ol>
+<h2>How to use it</h2><ol class="steps"><li>Read <a href="#/curriculum/0">Start here</a>.</li><li>Pick the track that matches your job: <a href="#/cloud">Cloud</a>, <a href="#/sdk">SDK</a> or <a href="#/partners">Partners</a>.</li><li>Break things on purpose in the <a href="#/labs">Fix-it labs</a>, then watch a related <a href="#/videos">video</a>.</li><li>Check yourself with the <a href="#/quiz">quiz</a>.</li><li>Use the <a href="#/prompts">AI prompts</a> on your own scenarios. Redact first.</li></ol>
 <div class="note flag" role="note"><b>Disclaimer.</b> Educational learning exercise only. Not affiliated with any company or individual, and not endorsed by or prepared for IBM, Salesforce, ServiceNow, SAP, Workday or anyone else. Not security, licensing or compliance advice; verify with official IBM documentation.</div>`;
+
+V.videos=()=>`<h1>Videos</h1><p class="lead">${VIDEOS.length} public videos, grouped by topic. Each one plays from YouTube's privacy-enhanced player only after you click it, and each card names the part of this site it goes with. Titles, channels and dates were checked on Oct 14, 2026. Only the ones from IBM Technology, IBM Developer, IBM Product Hub or IBM Bob are official IBM channels.</p>
+<div class="note flag" role="note"><b>Heads up.</b> Product UIs and ADK commands change fast. Videos from 2025 may show ADK 1.x commands; check the SDK track for current syntax. Older 2023-2024 "skills" era videos were left out.</div>
+${VIDEO_GROUPS.map((g,gi)=>`<h2>${esc(g)}</h2><div class="grid vids">${VIDEOS.filter(x=>x.g===gi).map(x=>`<div class="card"><div class="yt-facade" data-ytbox="${esc(x.id)}"><button type="button" class="yt-play" data-yt="${esc(x.id)}" data-ytt="${esc(x.t)}" aria-label="Play ${esc(x.t)} (loads YouTube)"><img src="https://i.ytimg.com/vi/${encodeURIComponent(x.id)}/hqdefault.jpg" alt="" loading="lazy" decoding="async"><span class="yt-btn" aria-hidden="true">▶</span><span class="yt-note">Plays from YouTube (privacy-enhanced)</span></button></div>
+<h3>${esc(x.t)}</h3><p><small>${esc(x.ch)} · ${esc(x.d)}</small></p><p>${esc(x.n)}</p><p>Pairs with: <a href="#/${x.pair[0]}">${esc(x.pair[1])}</a> · <a href="https://www.youtube.com/watch?v=${encodeURIComponent(x.id)}" target="_blank" rel="noopener">Open on YouTube ↗</a></p></div>`).join("")}</div>`).join("")}`;
 
 V.curriculum=()=>`<h1>Curriculum</h1><p class="lead">${BLOCKS.length} blocks plus three featured tracks. Mark blocks done as you go.</p>
 <div class="grid">${BLOCKS.map(b=>`<div class="card"><h3>${esc(b.t)}</h3><p>${esc(b.intro)}</p><p><small>About ${b.min} min</small> ${LS.get("done"+b.id,false)?'<span class="ok">✓ done</span>':""}</p><a class="b" href="#/curriculum/${b.id}">Open →</a></div>`).join("")}
@@ -49,6 +55,7 @@ function block(id){const b=BLOCKS.find(x=>x.id==id);if(!b)return V.curriculum();
  ${b.sections.map(s=>`<h2>${esc(s.h)}</h2>${s.p.map(p=>`<p>${rich(p)}</p>`).join("")}`).join("")}
  ${b.socratic?`<h2>Why do we even need this?</h2><p>Think about each one before opening it.</p>${b.socratic.map(s=>`<details><summary>${esc(s.q)}</summary><p>${rich(s.a)}</p></details>`).join("")}`:""}
  ${qs.length?`<h2>Self-check</h2>${qs.map((q,i)=>quizItem(q,"b"+b.id+"-"+i)).join("")}`:""}
+ ${b.id==0?`<p><a class="b" href="#/videos">Prefer watching? See the Videos →</a></p>`:""}
  <p><button type="button" class="b ${LS.get("done"+b.id,false)?"sel":""}" data-done="${b.id}">${LS.get("done"+b.id,false)?"✓ Marked done":"Mark block done"}</button></p>`;}
 
 V.track=(k,sub)=>{const P=TRACKS[k];
@@ -182,6 +189,7 @@ function showPop(el){const k=el.dataset.code,c=CODES[k];if(!c)return;
 document.addEventListener("click",e=>{const t=e.target.closest("button,[data-code]");
  if(!e.target.closest("#pop")&&!(t&&(t.dataset.code||t.dataset.note)))pop.hidden=true;
  if(!t)return;const d=t.dataset;
+ if(d.yt){const box=t.closest("[data-ytbox]");if(box&&!box.dataset.on){box.dataset.on="1";const f=document.createElement("iframe");f.src="https://www.youtube-nocookie.com/embed/"+encodeURIComponent(d.yt)+"?rel=0&playsinline=1&autoplay=1";f.title=d.ytt||"YouTube video";f.allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen";f.allowFullscreen=true;f.referrerPolicy="strict-origin-when-cross-origin";f.style.border="0";box.innerHTML="";box.appendChild(f);}return;}
  if(d.code){e.preventDefault();showPop(t);return;}
  if(d.note){e.preventDefault();showNote(t);return;}
  if(d.pf!=null){window._pf=+d.pf;route();}
@@ -209,12 +217,13 @@ $("#menuBtn").onclick=()=>{const s=$("#sidebar");s.classList.toggle("open");$("#
 /* theme */
 function setTheme(t){document.documentElement.dataset.theme=t;LS.set("theme",t);$("#themeBtn").textContent=t==="house-light"?"Dark mode":"Light mode";}
 $("#themeBtn").onclick=()=>setTheme(document.documentElement.dataset.theme==="house-light"?"house-dark":"house-light");
-setTheme(LS.get("theme","house-dark"));
+setTheme(LS.get("theme","house-light"));
 
 /* search palette */
 const IDX=[].concat(
- [["Today","today"],["About this site","about"],["Fix-it labs","labs"],["AI prompts","prompts"],["Curriculum","curriculum"],["Cloud track","cloud"],["Cloud lab","cloud/lab"],["Cloud code","cloud/code"],["Cloud troubleshooter","cloud/trouble"],["SDK track","sdk"],["SDK lab","sdk/lab"],["SDK code","sdk/code"],["SDK troubleshooter","sdk/trouble"],["Partner integrations","partners"],["Partner lab","partners/lab"],["Partner code","partners/code"],["Partner troubleshooter","partners/trouble"],["Map","map"],["Ways to interact","methods"],["Method picker","picker"],["Limits and gotchas","limits"],["Guides","guides"],["Learning path","path"],["Quiz","quiz"],["Glossary","glossary"],["Source ledger","refs"]].map(([t,h])=>({t,k:"View",h})),
+ [["Today","today"],["About this site","about"],["Fix-it labs","labs"],["Videos","videos"],["AI prompts","prompts"],["Curriculum","curriculum"],["Cloud track","cloud"],["Cloud lab","cloud/lab"],["Cloud code","cloud/code"],["Cloud troubleshooter","cloud/trouble"],["SDK track","sdk"],["SDK lab","sdk/lab"],["SDK code","sdk/code"],["SDK troubleshooter","sdk/trouble"],["Partner integrations","partners"],["Partner lab","partners/lab"],["Partner code","partners/code"],["Partner troubleshooter","partners/trouble"],["Map","map"],["Ways to interact","methods"],["Method picker","picker"],["Limits and gotchas","limits"],["Guides","guides"],["Learning path","path"],["Quiz","quiz"],["Glossary","glossary"],["Source ledger","refs"]].map(([t,h])=>({t,k:"View",h})),
  BLOCKS.map(b=>({t:b.t,k:"Block",h:"curriculum/"+b.id,x:b.sections.map(s=>s.h+" "+s.p.join(" ")).join(" ")})),
+ VIDEOS.map(x=>({t:x.t,k:"Video · "+x.ch,h:"videos",x:x.n})),
  PROMPTS.map((p,i)=>({t:p.t,k:"Prompt · "+PROMPT_CATS[p.c],h:"prompts",x:p.p})),
  LABS.map((l,i)=>({t:l.t,k:"Fix-it lab",h:"labs/"+i,x:l.symptom+" "+l.setup})),
  GUIDES.map((g,i)=>({t:g.t,k:"Guide",h:"guides/"+i,x:g.steps.join(" ")})),
